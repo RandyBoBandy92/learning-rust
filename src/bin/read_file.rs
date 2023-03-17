@@ -23,15 +23,14 @@ fn read_file_contents(file_name: &str) -> Result<String, io::Error> {
 //  file name as a command-line argument and print the contents of the file or an error message if the file cannot be read.
 
 fn main() {
-    println!("Current directory: {:?}", current_dir()); // Ok("/Users/Randy/Documents/temp/learning-rust")
-    let file_name = "./src/bin/text.txt"; // i got an error here until I used a relative path
-    let contents = read_file_contents(file_name);
-    match contents {
-        Ok(contents) => println!("Contents of {}: {}", file_name, contents),
-        Err(e) => println!("Error reading {}: {}", file_name, e),
+    let args: Vec<String> = env::args().collect();
+    if args.len() < 2 {
+        println!("Usage: {} <file_name>", args[0]);
+        return;
     }
-    // now lets try to read a file that doesn't exist
-    let file_name = "does_not_exist.txt";
+    let file_name = &args[1];
+    // Rest of the code
+    println!("Current directory: {:?}", current_dir()); // Ok("/Users/Randy/Documents/temp/learning-rust")
     let contents = read_file_contents(file_name);
     match contents {
         Ok(contents) => println!("Contents of {}: {}", file_name, contents),

@@ -9,3 +9,6 @@ edition = "2021"
 [[bin]]
 name = "calculate"
 path = "src/bin/calculate.rs"
+[[bin]]
+name = "read_file"
+path = "src/bin/read_file.rs"
