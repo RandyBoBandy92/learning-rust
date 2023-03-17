@@ -1,6 +1,8 @@
+mod colors;
 mod foo;
 mod shapes;
 mod strings;
+use colors::{print_color_info, Colors};
 
 fn main() {
     // println!("Hello, world!");
@@ -18,9 +20,14 @@ fn main() {
         width: 10.0,
         height: 5.0,
     };
-    println!("Area of circle: {}", shapes::calculate_circle_area(&c));
-    println!(
-        "Area of rectangle: {}",
-        shapes::calculate_rectangle_area(&r)
-    );
+    println!("Area of circle: {}", c.area());
+    let diameter = c.get_diameter();
+    if diameter > 10.0 {
+        println!("Diameter is greater than 10.0");
+    } else {
+        println!("Diameter is less than 10.0");
+    }
+    println!("Area of rectangle: {}", r.area());
+
+    print_color_info(Colors::Red(255));
 }

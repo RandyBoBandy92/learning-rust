@@ -9,10 +9,17 @@ pub struct Rectangle {
     pub height: f64,
 }
 
-pub fn calculate_circle_area(c: &Circle) -> f64 {
-    return PI * c.radius.powf(2.0);
+impl Circle {
+    pub fn area(&self) -> f64 {
+        return PI * self.radius.powf(2.0);
+    }
+    pub fn get_diameter(&self) -> f64 {
+        return self.radius * 2.0;
+    }
 }
 
-pub fn calculate_rectangle_area(r: &Rectangle) -> f64 {
-    return r.width * r.height;
+impl Rectangle {
+    pub fn area(&self) -> f64 {
+        return self.width * self.height;
+    }
 }
