@@ -44,6 +44,45 @@
         {
             "type": "lldb",
             "request": "launch",
+            "name": "Debug executable 'read_file'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=read_file",
+                    "--package=hello-world",
+                ],
+                "filter": {
+                    "name": "read_file",
+                    "kind": "bin"
+                }
+            },
+            "args": [
+                "./src/bin/text.txt"
+            ],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'read_file'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=read_file",
+                    "--package=hello-world"
+                ],
+                "filter": {
+                    "name": "read_file",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
             "name": "Debug executable 'hello-world'",
             "cargo": {
                 "args": [
@@ -72,6 +111,80 @@
                 ],
                 "filter": {
                     "name": "hello-world",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'find_first_negative'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=find_first_negative",
+                    "--package=hello-world"
+                ],
+                "filter": {
+                    "name": "find_first_negative",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'find_first_negative'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=find_first_negative",
+                    "--package=hello-world"
+                ],
+                "filter": {
+                    "name": "find_first_negative",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'fizzbuzz'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=fizzbuzz",
+                    "--package=hello-world"
+                ],
+                "filter": {
+                    "name": "fizzbuzz",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'fizzbuzz'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=fizzbuzz",
+                    "--package=hello-world"
+                ],
+                "filter": {
+                    "name": "fizzbuzz",
                     "kind": "bin"
                 }
             },
